@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import DesFilter from './DesFilter.js'
 import StateFilter from './StateFilter.js'
+import Filter from './Filter.js'
 
 import '../stylesheets/parks.css'
 
@@ -232,6 +233,7 @@ class Parks extends Component {
                         <input onChange={this.onSearchChange} type="text" className="search-bar" placeholder="Search..."></input>
                     </div>
                     <div className="row filter-row">
+                        {/* <Filter filter onDesigChange={this.onDesigChange} desig={this.state.desig} /> */}
                         <DesFilter desFilter onDesigChange={this.onDesigChange} desig={this.state.desig} />
                         <StateFilter stateFilter onStatesChange={this.onStatesChange} states={this.state.states} />
                     </div>

@@ -33,6 +33,10 @@ p {
     padding-left: 2rem;
 }
 
+.modal-body {
+    padding: 1.5rem;
+}
+
 .carousel-card {
     object-fit: cover;
     overflow: hidden;
@@ -131,6 +135,10 @@ p {
     display: -moz-box;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 .tab-content {
     height: 100%;
     overflow: auto;
@@ -141,6 +149,14 @@ p {
     overflow-y: scroll;
 }
 
+.card-info-pane {
+    padding: 2.5rem;
+}
+
+.visitor-center, .campground, .places, .people,
+.article, .event, .news-release, .lesson {
+    padding-bottom: 1.5rem;
+}
 
 .col-contact {
     width: 50px;
@@ -151,7 +167,7 @@ p {
     width: 100%;
     margin-left: 0px;
     margin-right: 0px;
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 4rem;
 }
 
@@ -183,7 +199,7 @@ p {
 }
 
 .extra-info-row {
-    padding-top: 2rem;
+    padding-top: 2.5rem;
 }
 
 .extra-info {

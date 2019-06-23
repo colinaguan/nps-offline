@@ -71,13 +71,13 @@ class App extends Component {
     return (
       <div className="container">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"></link>
-        <nav className="navbar d-flex justify-content-center">
-          <Link className="navbar-brand text-center center-block" to="/">
-            <img className="logo" width="30" height="30" src={logoImg} />
-          </Link>
-        </nav>
-
         <Router basename="/nps">
+          <nav className="navbar d-flex justify-content-center">
+            <Link className="navbar-brand text-center center-block" to="/">
+              <img className="logo" width="30" height="30" src={logoImg} />
+            </Link>
+          </nav>
+
           <Switch>
             <Route path='/' exact
               render={() => <Parks parks={this.state.parks} handleParkInfo={this.handleParkInfo} />}

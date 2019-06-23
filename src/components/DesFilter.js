@@ -7,32 +7,41 @@ class DesFilter extends Component {
         let dropdown;
         var desig = this.props.desig;
         var keys = Object.keys(desig);
-        // console.log("Rendering Designations: ");
-        // console.log(desig);
 
+        keys.sort();
 
         dropdown = keys.map((keys) => (
-            // <li className="desFilter" key={keys}><button className="dropdown-item" onClick={() => this.props.onDesigChange(keys)}>{keys}</button></li>
-            <li className="" data-value="option1" tabIndex="-1"><input type="checkbox" />&nbsp;{keys}</li>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value={keys} id="defaultCheck1" />
+                <label class="form-check-label" for="defaultCheck1">
+                    {keys}
+                </label>
+            </div>
         ));
-
-        // dropdown = keys.map((keys) => (
-        //     <div className="desFilter" key={keys}>
-        //         <li className="dropdown-item">
-        //             <input type="checkbox" onClick={() => this.props.onDesigChange(keys)}></input>
-        //             <label>{keys}</label>
-        //         </li>
-        //     </div>
-        // ));
 
         return (
             <div className="col col-filter">
-                <button type="button" className="btn btn-lg btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" className="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#exampleModal">
                     Filter by Designation
                 </button>
-                <div className="dropdown-menu scrollable-menu">
-                    <li className="desFilter" key={keys}><button className="dropdown-item" onClick={() => this.props.onDesigChange("None")}>None</button></li>
-                    {dropdown}
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Filter by Designation</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                {dropdown}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Clear</button>
+                                <button type="button" class="btn btn-primary">Filter</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

@@ -113,10 +113,10 @@ class Info extends Component {
         // console.log(this.state.alerts);
         // console.log("Articles");
         // console.log(this.state.articles);
-        console.log("Campgrounds");
-        console.log(this.state.campgrounds);
-        // console.log("Events");
-        // console.log(this.state.events);
+        // console.log("Campgrounds");
+        // console.log(this.state.campgrounds);
+        console.log("Events");
+        console.log(this.state.events);
         // console.log("Lesson Plans");
         // console.log(this.state.lessonplans);
         // console.log("News Relesases");
@@ -276,7 +276,7 @@ class Info extends Component {
                 <div className="article">
                     <h6>{art.title}</h6>
                     <p>{art.listingdescription}</p>
-                    <p className="a-link"><a href={art.url}>Click to view full article...</a></p>
+                    <p className="a-link"><a href={art.url}>View full article...</a></p>
                 </div>
             ));
         }
@@ -298,7 +298,7 @@ class Info extends Component {
                 <div className="news-release">
                     <h6>{news.title}</h6>
                     <p>{news.abstract}</p>
-                    <p className="a-link"><a href={news.url}>Click to view full news release...</a></p>
+                    <p className="a-link"><a href={news.url}>View full news release...</a></p>
                 </div>
             ));
         }
@@ -389,7 +389,7 @@ class Info extends Component {
 
                         <div className="card content-pane">
                             <div className="card-header">
-                                <ul className="nav nav-tabs card-header-tabs" id="pills-tab" role="tablist">
+                                <ul className="nav nav-tabs card-header-tabs overflow-hidden" id="pills-tab" role="tablist">
                                     <li className="nav-item">
                                         <a className="nav-link active" id="pills-overview-tab" data-toggle="pill" href="#pills-overview" role="tab" aria-controls="pills-overview" aria-selected="true">Overview</a>
                                     </li>
@@ -415,7 +415,7 @@ class Info extends Component {
                                     }
                                 </ul>
                             </div>
-                            <div className="card-body">
+                            <div className="card-body card-info-pane">
                                 <div className="tab-content pane-scroll" id="pills-tabContent">
                                     <div className="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab">
                                         {/* Overview Text */}
