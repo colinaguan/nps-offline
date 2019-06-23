@@ -51,7 +51,6 @@ class App extends Component {
 
     console.log(this.state.parks);
 
-    var innerHtml;
     if (!this.state.parks) {
       return (
         <div className="container">
@@ -78,14 +77,16 @@ class App extends Component {
           </Link>
         </nav>
 
-        <Switch>
-          <Route path='/' exact
-            render={() => <Parks parks={this.state.parks} handleParkInfo={this.handleParkInfo} />}
-          />
-          <Route path='/parks/:id'
-            render={(props) => <Info parks={this.state.parks} pageName={this.state.page} id={props.match.params.id} />}
-          />
-        </Switch>
+        <Router basename="/nps">
+          <Switch>
+            <Route path='/' exact
+              render={() => <Parks parks={this.state.parks} handleParkInfo={this.handleParkInfo} />}
+            />
+            <Route path='/parks/:id'
+              render={(props) => <Info parks={this.state.parks} pageName={this.state.page} id={props.match.params.id} />}
+            />
+          </Switch>
+        </Router>
       </div>
 
     );

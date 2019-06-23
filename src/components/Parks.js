@@ -199,20 +199,28 @@ class Parks extends Component {
         //<img class="card-img-top" src={parkInfo.images.url} alt="Card image cap"></img>
 
         if (parkInfo)
-            content = parkInfo.data.map((parkInfo) => (
-                <div className="card park-card" key={parkInfo.fullName}>
-                    <img className="card-img-top" src={parkInfo.images[0].url} alt="Card image cap"></img>
-                    <div className="card-block d-flex">
-                        <div className="card-body">
-                            <h5 className="card-title">{parkInfo.fullName}</h5>
-                            <p className="card-text text-muted">{parkInfo.designation}</p>
-                            <Link to={"/parks/" + parkInfo.parkCode} >
-                                <button type="button learn-more" className="btn btn-success">Learn More</button>
-                            </Link>
+            content = parkInfo.data.map((parkInfo) => {
+                var stateStr = parkInfo.states.split(",").join(" ");
+                return (
+                    <div className="col-lg-4 col-md-6">
+                        <div className="card park-card" key={parkInfo.fullName}>
+                            <img className="card-img-top" src={parkInfo.images[0].url} alt="Card image cap"></img>
+                            <div className="card-block d-flex">
+                                <div className="card-body">
+                                    <h5 className="card-title">{parkInfo.fullName}</h5>
+                                    <p className="card-text text-muted">
+                                        {parkInfo.designation + " "}
+                                        <small style={{ "opacity": 0.5 }}>{stateStr}</small>
+                                    </p>
+                                    <Link to={"/parks/" + parkInfo.parkCode} >
+                                        <button type="button learn-more" className="btn btn-success">Learn More</button>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ));
+                );
+            });
         else
             content = <div></div>;
 
@@ -228,7 +236,7 @@ class Parks extends Component {
                         <StateFilter stateFilter onStatesChange={this.onStatesChange} states={this.state.states} />
                     </div>
                 </div>
-                <div className="row list-parks">
+                <div className="row">
                     {content}
                 </div>
             </div >

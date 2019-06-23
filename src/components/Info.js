@@ -2,6 +2,16 @@ import React, { Component } from 'react'
 
 import '../stylesheets/info.css'
 
+import alertData from '../tempData/alerts.json'
+import articleData from '../tempData/articles.json'
+import campgroundData from '../tempData/campgrounds.json'
+import eventsData from '../tempData/events.json'
+import lessonData from '../tempData/lessonplans.json'
+import newsData from '../tempData/newsreleases.json'
+import pplData from '../tempData/people.json'
+import placesData from '../tempData/places.json'
+import vcenterData from '../tempData/visitorcenters.json'
+
 const API = 'https://developer.nps.gov/api/v1/';
 const KEY = 'kTXawZC8Up8xkPa8gocEoJ9ZRAeXGZnKzx5PxtcS';
 
@@ -23,15 +33,25 @@ class Info extends Component {
 
         this.state = {
             parkInfo: {},
-            alerts: {},
-            articles: {},
-            campgrounds: {},
-            events: {},
-            lessonplans: {},
-            newsreleases: {},
-            people: {},
-            places: {},
-            visitorcenters: {},
+            // alerts: {},
+            // articles: {},
+            // campgrounds: {},
+            // events: {},
+            // lessonplans: {},
+            // newsreleases: {},
+            // people: {},
+            // places: {},
+            // visitorcenters: {},
+
+            alerts: alertData,
+            articles: articleData,
+            campgrounds: campgroundData,
+            events: eventsData,
+            lessonplans: lessonData,
+            newsreleases: newsData,
+            people: pplData,
+            places: placesData,
+            visitorcenters: vcenterData,
         }
 
         //parkInfo.images[0].url
@@ -40,61 +60,61 @@ class Info extends Component {
             return element.parkCode === props.id;
         });
 
-        fetch(API + 'alerts?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ alerts: data }))
-            .catch(console.log);
+        // fetch(API + 'alerts?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ alerts: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'articles?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ articles: data }))
-            .catch(console.log);
+        // fetch(API + 'articles?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ articles: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'campgrounds?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ campgrounds: data }))
-            .catch(console.log);
+        // fetch(API + 'campgrounds?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ campgrounds: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'events?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ events: data }))
-            .catch(console.log);
+        // fetch(API + 'events?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ events: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'lessonplans?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ lessonplans: data }))
-            .catch(console.log);
+        // fetch(API + 'lessonplans?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ lessonplans: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'newsreleases?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ newsreleases: data }))
-            .catch(console.log);
+        // fetch(API + 'newsreleases?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ newsreleases: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'people?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ people: data }))
-            .catch(console.log);
+        // fetch(API + 'people?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ people: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'places?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ places: data }))
-            .catch(console.log);
+        // fetch(API + 'places?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ places: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'visitorcenters?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ visitorcenters: data }))
-            .catch(console.log);
+        // fetch(API + 'visitorcenters?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ visitorcenters: data }))
+        //     .catch(console.log);
     }
 
     render() {
-        // console.log("Specific Park Info");
-        // console.log(this.state.parkInfo);
+        console.log("Specific Park Info");
+        console.log(this.state.parkInfo);
         // console.log("Alerts");
         // console.log(this.state.alerts);
         // console.log("Articles");
         // console.log(this.state.articles);
-        // console.log("Campgrounds");
-        // console.log(this.state.campgrounds);
+        console.log("Campgrounds");
+        console.log(this.state.campgrounds);
         // console.log("Events");
         // console.log(this.state.events);
         // console.log("Lesson Plans");
@@ -128,6 +148,8 @@ class Info extends Component {
                 return (<li data-target="#carouselExampleIndicators" data-slide-to={i}></li>);
         });
 
+        let stateStr = this.state.parkInfo.states.split(",").join(" ");
+
         // content in alert modal html
         let alertModalDisp;
         if (this.state.alerts && this.state.alerts.total > 0) {
@@ -158,7 +180,7 @@ class Info extends Component {
                             <p>{center.directionsInfo}</p>
                         </div>
                     }
-                    <p><a href={center.url}>More information...</a></p>
+                    <p className="a-link"><a href={center.url}>More information...</a></p>
                 </div>
             ));
         }
@@ -170,9 +192,6 @@ class Info extends Component {
                 <div className="campground">
                     <h5>{camp.name}</h5>
                     <p>{camp.description}</p>
-                    <h6>Regulations</h6>
-                    <p>{camp.regulationsoverview}</p>
-                    <p><a href={camp.regulationsurl}>More information on regulations...</a></p>
                     {camp.directionsoverview !== "" &&
                         <div className="campground-dir">
                             <h6>Directions</h6>
@@ -183,9 +202,11 @@ class Info extends Component {
                         <div className="campground-dir">
                             <h6>Weather</h6>
                             <p>{camp.weatheroverview}</p>
-                            <p><a href={camp.url}>More information...</a></p>
                         </div>
                     }
+                    <h6>Regulations</h6>
+                    <p>{camp.regulationsoverview}</p>
+                    <p className="a-link"><a href={camp.regulationsurl}>More information on regulations...</a></p>
                 </div>
             ));
         }
@@ -197,7 +218,7 @@ class Info extends Component {
                 <div className="places">
                     <h5>{place.title}</h5>
                     <p>{place.listingdescription}</p>
-                    <p><a href={place.url}>More information...</a></p>
+                    <p className="a-link"><a href={place.url}>More information...</a></p>
                 </div>
             ));
         }
@@ -208,7 +229,7 @@ class Info extends Component {
                 <div className="people">
                     <h5>{ppl.title}</h5>
                     <p>{ppl.listingdescription}</p>
-                    <p><a href={ppl.url}>More information...</a></p>
+                    <p className="a-link"><a href={ppl.url}>More information...</a></p>
                 </div>
             ));
         }
@@ -217,7 +238,7 @@ class Info extends Component {
         let physAddy = this.state.parkInfo.addresses.map((add) => {
             if (add.type === "Physical") {
                 return (
-                    <p className="card-text">
+                    <p className="p-right-info">
                         {add.line1}<br />
                         {add.line2.length !== 0 && <div>{add.line2} < br /></div>}
                         {add.line3.length !== 0 && <div>{add.line3} < br /></div>}
@@ -232,22 +253,16 @@ class Info extends Component {
         let contactDisp = this.state.parkInfo.contacts.phoneNumbers.map((num) => {
             if (num.type === "Voice") {
                 let numStr = num.phoneNumber;
-
                 return (
                     <div className="contact-info-text">
                         {isNaN(numStr) &&
                             <div className="phone-number">
-                                <p>
-                                    {numStr}<br />{emailDisp}
-                                </p>
+                                <p className="p-right-info">{numStr}</p>
                             </div>
                         }
                         {!isNaN(numStr) &&
                             <div className="phone-number">
-                                <p>
-                                    {"(" + numStr.substr(0, 3) + ") " + numStr.substr(3, 3) + "-" + numStr.substr(6, 4)}<br />
-                                    {emailDisp}
-                                </p>
+                                <p className="p-right-info">{"(" + numStr.substr(0, 3) + ") " + numStr.substr(3, 3) + "-" + numStr.substr(6, 4)}</p>
                             </div>
                         }
                     </div>
@@ -261,7 +276,7 @@ class Info extends Component {
                 <div className="article">
                     <h6>{art.title}</h6>
                     <p>{art.listingdescription}</p>
-                    <p><a href={art.url}>Click to view full article...</a></p>
+                    <p className="a-link"><a href={art.url}>Click to view full article...</a></p>
                 </div>
             ));
         }
@@ -283,7 +298,7 @@ class Info extends Component {
                 <div className="news-release">
                     <h6>{news.title}</h6>
                     <p>{news.abstract}</p>
-                    <p><a href={news.url}>Click to view full news release...</a></p>
+                    <p className="a-link"><a href={news.url}>Click to view full news release...</a></p>
                 </div>
             ));
         }
@@ -294,7 +309,7 @@ class Info extends Component {
                 <div className="lesson">
                     <h6>{lesson.title}</h6>
                     <p>{lesson.questionobjective}</p>
-                    <p><a href={lesson.url}>View full lesson plan...</a></p>
+                    <p className="a-link"><a href={lesson.url}>View full lesson plan...</a></p>
                 </div>
             ));
         }
@@ -304,10 +319,18 @@ class Info extends Component {
 
                 {/* carousel with pictures */}
                 <div className="row">
-                    <div className="card">
+                    <div className="card carousel-card">
                         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                             <div>
-                                <h3 className="park-title">{this.state.parkInfo.fullName}</h3>
+                                <div className="park-header">
+                                    <h3 className="park-title">{this.state.parkInfo.fullName}</h3>
+                                    <p className="park-desig-state">
+                                        {this.state.parkInfo.designation + " "}
+                                        <small>{stateStr}</small>
+                                    </p>
+                                </div>
+                                <div className="gradient">
+                                </div>
                             </div>
                             <ol className="carousel-indicators">
                                 {carIndi}
@@ -330,17 +353,20 @@ class Info extends Component {
                 {/* Alert Container */}
                 <div className="row">
                     {this.state.alerts.total > 0 &&
-                        <div className="alert alert-danger" role="alert" data-toggle="modal" data-target="#exampleModal">
-                            <div className="alert-message">
+                        <div className="alert alert-danger row-alert" role="alert" data-toggle="modal" data-target="#exampleModal">
+                            <div className="alert-message d-flex align-items-center">
                                 <span class="badge badge-light">{this.state.alerts.total}</span>
-                                View Alerts in Effect
+                                <div className="alert-text">
+                                    View Alerts in Effect
+                                </div>
                             </div>
-                            {/* Modal */}
+
+                            {/* Alert Modal */}
                             <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria- labelledby="exampleModalLabel" aria-hidden="true" >
                                 <div className="modal-dialog" role="document">
                                     <div className="modal-content">
                                         <div className="modal-header">
-                                            <h5 className="modal-title" id="exampleModalLabel">Alerts in Effect</h5>
+                                            <h5 className="modal-title alert-modal-title" id="exampleModalLabel">Alerts in Effect</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -357,7 +383,7 @@ class Info extends Component {
                 </div>
 
                 {/* container with all specific park info */}
-                <div className="row">
+                <div className="row row-info">
 
                     <div className="col-8">
 
@@ -418,64 +444,68 @@ class Info extends Component {
                     {/* right column with contact information */}
                     <div className="col-4">
 
-                        <div className="container">
-
-                            <div className="row">
-                                <a href={this.state.parkInfo.url} target="_blank" className="btn btn-success btn-lg">View more info</a>
+                        <div className="row row-info-button">
+                            <a href={this.state.parkInfo.url} target="_blank" className="btn btn-success btn-more-info d-flex align-items-center justify-content-center">View more info</a>
+                        </div>
+                        <div className="row">
+                            <div className="col-5 col-left-info">
+                                <p className="p-left-info">Address</p>
                             </div>
-
-                            <div className="row">
-                                <div className="col">
-                                    Address
-                                </div>
-                                <div className="col">
-                                    {physAddy}
-                                </div>
+                            <div className="col-7 col-right-info">
+                                {physAddy}
                             </div>
+                        </div>
 
-                            <div className="row">
-                                <div className="col">
-                                    <p>
-                                        Phone<br />
-                                        Email
-                                    </p>
-                                </div>
-                                <div className="col">
-                                    {contactDisp}
-                                </div>
+                        <div className="row">
+                            <div className="col-5 col-left-info">
+                                <p className="p-left-info">Phone</p>
                             </div>
-
-                            <div className="row">
-                                <div className="col">
-                                    <p>
-                                        Monday<br />
-                                        Tuesday<br />
-                                        Wednesday<br />
-                                        Thursday<br />
-                                        Friday<br />
-                                        Saturday<br />
-                                        Sunday<br />
-                                    </p>
-                                </div>
-                                <div className="col">
-                                    <p>
-                                        {this.state.parkInfo.operatingHours[0].standardHours.monday}<br />
-                                        {this.state.parkInfo.operatingHours[0].standardHours.tuesday}<br />
-                                        {this.state.parkInfo.operatingHours[0].standardHours.wednesday}<br />
-                                        {this.state.parkInfo.operatingHours[0].standardHours.thursday}<br />
-                                        {this.state.parkInfo.operatingHours[0].standardHours.friday}<br />
-                                        {this.state.parkInfo.operatingHours[0].standardHours.saturday}<br />
-                                        {this.state.parkInfo.operatingHours[0].standardHours.sunday}<br />
-                                    </p>
-                                </div>
+                            <div className="col-7 col-right-info">
+                                {contactDisp}
                             </div>
+                        </div>
 
-                            {this.state.articles.total > 0 && <span className="extra-info" data-toggle="modal" data-target="#articleModalLong">Articles<br /></span>}
+                        <div className="row">
+                            <div className="col-5 col-left-info">
+                                <p className="p-left-info">Email</p>
+                            </div>
+                            <div className="col-7 col-right-info">
+                                <p className="p-right-info">{emailDisp}</p>
+                            </div>
+                        </div>
 
-                            <span className="extra-info" data-toggle="modal" data-target="#eventsModalLong">Events<br /></span>
-                            <span className="extra-info" data-toggle="modal" data-target="#newsModalLong">News Releases<br /></span>
-                            <span className="extra-info" data-toggle="modal" data-target="#lessonModalLong">Lesson Plans</span>
+                        <div className="row">
+                            <div className="col-5 col-left-info">
+                                <p className="p-left-info">
+                                    Monday<br />
+                                    Tuesday<br />
+                                    Wednesday<br />
+                                    Thursday<br />
+                                    Friday<br />
+                                    Saturday<br />
+                                    Sunday<br />
+                                </p>
+                            </div>
+                            <div className="col-7 col-right-info">
+                                <p className="p-right-info">
+                                    {this.state.parkInfo.operatingHours[0].standardHours.monday}<br />
+                                    {this.state.parkInfo.operatingHours[0].standardHours.tuesday}<br />
+                                    {this.state.parkInfo.operatingHours[0].standardHours.wednesday}<br />
+                                    {this.state.parkInfo.operatingHours[0].standardHours.thursday}<br />
+                                    {this.state.parkInfo.operatingHours[0].standardHours.friday}<br />
+                                    {this.state.parkInfo.operatingHours[0].standardHours.saturday}<br />
+                                    {this.state.parkInfo.operatingHours[0].standardHours.sunday}<br />
+                                </p>
+                            </div>
+                        </div>
 
+                        <div className="row extra-info-row">
+                            <div className="col col-left-info">
+                                {this.state.articles.total > 0 && <p className="extra-info" data-toggle="modal" data-target="#articleModalLong">Articles</p>}
+                                {this.state.events.total > 0 && <p className="extra-info" data-toggle="modal" data-target="#eventsModalLong">Events</p>}
+                                {this.state.newsreleases.total > 0 && <p className="extra-info" data-toggle="modal" data-target="#newsModalLong">News Releases</p>}
+                                {this.state.lessonplans.total > 0 && <p className="extra-info" data-toggle="modal" data-target="#lessonModalLong">Lesson Plans</p>}
+                            </div>
                             {/* Article Modal */}
                             <div className="modal fade" id="articleModalLong" tabindex="-1" role="dialog" aria- labelledby="articleModalLongTitle" aria-hidden="true" >
                                 <div className="modal-dialog" role="document">
@@ -543,12 +573,13 @@ class Info extends Component {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
 
                 </div>
-            </div >
+
+            </div>
         );
     }
 }
