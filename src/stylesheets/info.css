@@ -1,0 +1,14 @@
+.content-pane {
+    height: 750px;
+}
+
+.park-title {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+}
+
+.pane-scroll {
+    max-height: 750px;
+    overflow-y: auto;
+}

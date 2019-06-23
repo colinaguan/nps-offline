@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import DesFilter from './DesFilter.js'
 import StateFilter from './StateFilter.js'
+
+import '../stylesheets/parks.css'
 
 function loadDesig(parksO) {
 
@@ -71,13 +75,13 @@ class Parks extends Component {
             desig: {},          // designations
             states: {},         // states
             parksDisp: {},      // parks to display
-            dFilt: "",
-            sFilt: "",
+            // dFilt: "",
+            // sFilt: "",
             input: ""
         };
         // NOTE TO SELF: multiple filters??? checkbox list
 
-        this.onCardClick = this.onCardClick.bind(this);
+        //this.onFilterChange = this.onFilterChange.bind(this);
         this.onSearchChange = this.onSearchChange.bind(this);
         this.onDesigChange = this.onDesigChange.bind(this);
         this.onStatesChange = this.onStatesChange.bind(this);
@@ -86,6 +90,30 @@ class Parks extends Component {
         this.state.states = loadStates(this.props.parks);
         this.state.parksDisp = this.props.parks;
     }
+
+    // onFilterChange(event) {
+
+    //     var p = [];
+    //     var parks = this.props.parks.data;
+
+    //     // check if changed filter is DesigFilter
+    //     if (event in this.state.desig) {
+    //         var des = this.state.desig[event];
+
+    //         if (event === "None") {
+    //             p = this.props.parks.data;
+    //         } else {
+    //             for (var i = 0; i < des.length; i++) {
+    //                 var j = des[i];
+    //                 p[i] = parks[j];
+    //             }
+    //         }
+    //     }
+
+    //     this.setState({
+    //         parksDisp: { data: p }
+    //     });
+    // }
 
     onSearchChange(event) {
         console.log("Input changed");
@@ -110,10 +138,6 @@ class Parks extends Component {
         this.setState({
             parksDisp: { data: p }
         })
-    }
-
-    onCardClick(c) {
-
     }
 
     onDesigChange(d) {
@@ -170,61 +194,46 @@ class Parks extends Component {
         let content;
         var parkInfo = this.state.parksDisp;
 
-        if (!(parkInfo === null))
+        console.log(parkInfo);
+
+        //<img class="card-img-top" src={parkInfo.images.url} alt="Card image cap"></img>
+
+        if (parkInfo)
             content = parkInfo.data.map((parkInfo) => (
-                <div className="card" key={parkInfo.fullName} onClick={() => this.onCardClick(parkInfo)}>
-                    <div className="card-body">
-                        <h5 className="card-title">{parkInfo.fullName}</h5>
-                        <h6 className="card-subtitle mb-2 text-muted">{parkInfo.designation}</h6>
-                        <p className="card-text">{parkInfo.description}</p>
+                <div className="card park-card" key={parkInfo.fullName}>
+                    <img className="card-img-top" src={parkInfo.images[0].url} alt="Card image cap"></img>
+                    <div className="card-block d-flex">
+                        <div className="card-body">
+                            <h5 className="card-title">{parkInfo.fullName}</h5>
+                            <p className="card-text text-muted">{parkInfo.designation}</p>
+                            <Link to={"/parks/" + parkInfo.parkCode} >
+                                <button type="button learn-more" className="btn btn-success">Learn More</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             ));
         else
             content = <div></div>;
+
+
         return (
             <div>
-                <div>
-                    <h1>National Park Service</h1>
-                </div>
-                <div>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text" id="inputGroup-sizing-default">Search</span>
-                        </div>
-                        <input onChange={this.onSearchChange} type="text" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"></input>
+                <div className="container search-filter">
+                    <div className="row">
+                        <input onChange={this.onSearchChange} type="text" className="search-bar" placeholder="Search..."></input>
                     </div>
-                    <DesFilter desFilter onDesigChange={this.onDesigChange} desig={this.state.desig} />
-                    <StateFilter stateFilter onStatesChange={this.onStatesChange} states={this.state.states} />
+                    <div className="row filter-row">
+                        <DesFilter desFilter onDesigChange={this.onDesigChange} desig={this.state.desig} />
+                        <StateFilter stateFilter onStatesChange={this.onStatesChange} states={this.state.states} />
+                    </div>
                 </div>
-                {content}
+                <div className="row list-parks">
+                    {content}
+                </div>
             </div >
         );
     }
 }
-
-/*
-const Parks = ({parks}) => {
-            let content;
-    if (parks.data)
-        content = parks.data.map((parks) => (
-<div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{parks.fullName}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{parks.designation}, {parks.states}</h6>
-                <p class="card-text">{parks.description}</p>
-            </div>
-        </div>
-        ));
-    else
-content = <div></div>;
-            return (
-<div>
-            <left><h1>Parks</h1></left>
-            {content}
-        </div>
-        );
-    }
-    */
 
 export default Parks;

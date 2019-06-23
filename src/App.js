@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import Parks from './components/Parks.js'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-import data from './data.json'
+import Parks from './components/Parks.js'
+import Info from './components/Info.js'
+import './stylesheets/app.css'
+
+import logoImg from './images/logo.png'
+import data from './data2.json'
 
 const API = 'https://developer.nps.gov/api/v1/';
 const KEY = 'kTXawZC8Up8xkPa8gocEoJ9ZRAeXGZnKzx5PxtcS';
+
+//https://developer.nps.gov/api/v1/parks?limit=999&fields=fullName&fields=states&fields=parkCode&fields=description&fields=designation&fields=images
 
 class App extends Component {
 
@@ -12,54 +19,75 @@ class App extends Component {
     super(props);
 
     this.handleParkClick = this.handleParkClick.bind(this);
+    this.handleParkInfo = this.handleParkInfo.bind(this);
 
     this.state = {
       //parks: null,
       parks: data,       //grabbing from data.json (NOT FOR API)
+      events: null,
       page: "parks"
     };
 
+    // fetch(API + 'parks?limit=1&fields=addresses,contacts,images,operatingHours&api_key=' + KEY)
+    //   .then(response => response.json())
+    //   .then(data => this.setState({ parks: data }))
+    //   .catch(console.log);
   }
 
   handleParkClick() {
     this.setState({ page: "parks" });
   }
 
-  // componentDidMount() {
-  //   fetch(API + 'parks?parkCode=&limit=999&api_key=' + KEY)
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ parks: data }))
-  //     .catch(console.log);
-  // }
+  handleParkInfo(event) {
+
+    var code = event.parkCode;
+
+    this.setState({
+      page: code
+    });
+  }
 
   render() {
-    let content;
-    var pageName = this.state.page;
 
-    if (this.state.parks == null) {
+    console.log(this.state.parks);
+
+    var innerHtml;
+    if (!this.state.parks) {
       return (
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
+        <div className="container">
+          <nav className="navbar d-flex justify-content-center">
+            <Link className="navbar-brand text-center center-block" to="/">
+              <img className="logo" width="30" height="30" src={logoImg} />
+            </Link>
+          </nav>
+          <div className="container loading-container d-flex justify-content-center align-items-center">
+            <div className="spinner-border" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
         </div>
       );
     }
-    if (pageName === "parks") {
-      content = < Parks parks={this.state.parks} pageName={this.state.page} />;
-    }
+
     return (
-      <div className="text-center">
-        <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-          <header className="masthead mb-auto">
-            <div className="inner">
-              <button type="button" className="btn btn-light" onClick={this.handleParkClick}>Logo</button>
-            </div>
-          </header>
+      <div className="container">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"></link>
+        <nav className="navbar d-flex justify-content-center">
+          <Link className="navbar-brand text-center center-block" to="/">
+            <img className="logo" width="30" height="30" src={logoImg} />
+          </Link>
+        </nav>
 
-          {content}
-
-        </div>
+        <Switch>
+          <Route path='/' exact
+            render={() => <Parks parks={this.state.parks} handleParkInfo={this.handleParkInfo} />}
+          />
+          <Route path='/parks/:id'
+            render={(props) => <Info parks={this.state.parks} pageName={this.state.page} id={props.match.params.id} />}
+          />
+        </Switch>
       </div>
-      // <Parks parks={this.state.parks} />
+
     );
   }
 }
