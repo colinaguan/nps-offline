@@ -1,0 +1,202 @@
+{
+    "total": "3",
+    "data": [
+        {
+            "regulationsurl": "https:\/\/www.nps.gov\/thro\/planyourvisit\/camping-regulations.htm",
+            "weatheroverview": "Summers are warm (highs 80 - 100 degrees) with occasional thunderstorms and lots of wind. \nWinter is very cold with night time temperatures dropping well below zero.",
+            "campsites": {
+                "other": "0",
+                "group": "1",
+                "horse": "0",
+                "totalsites": "72",
+                "tentonly": "0",
+                "electricalhookups": "0",
+                "rvonly": "0",
+                "walkboatto": "12"
+            },
+            "accessibility": {
+                "wheelchairaccess": "",
+                "internetinfo": "",
+                "rvallowed": "0",
+                "cellphoneinfo": "Depending on your cellular provider, you may have moderate to limited cell signal or none at all.",
+                "firestovepolicy": "All fires must be contained in the provided grills (one at each site), or in a fully contained fire pan. Campfires and use of camp stoves may be restricted during times of high fire danger. \nSave our trees! Never transport firewood to the park from outside North Dakota. You could introduce harmful pests to the park.",
+                "rvmaxlength": "0",
+                "additionalinfo": "Each camp site has a picnic table, raised grill for campfires and for cooking with wood or charcoal, and a cleared, flat area for a tent. \n\nCottonwood Campground does not have a dump station. Commercial dump stations in Medora charge fees for use.",
+                "trailermaxlength": "0",
+                "adainfo": "",
+                "rvinfo": "",
+                "accessroads": [],
+                "trailerallowed": "0",
+                "classifications": []
+            },
+            "directionsoverview": "Enter the South Unit in Medora. Travel 5.5 miles on the scenic drive (East River Road). Cottonwood Campground is on the left. Stop at the campground’s self-registration kiosk for information on how to claim a campsite. If you have already made a reservation, you may go directly to your site.",
+            "reservationsurl": "",
+            "directionsUrl": "",
+            "reservationssitesfirstcome": "",
+            "name": "Cottonwood Campground",
+            "regulationsoverview": "Check out time is noon. Check in any time.",
+            "latLong": "{lat:46.95, lng:-103.5322222}",
+            "description": "Cottonwood Campground lies inside the park, about 5 miles from Medora, ND. It is the South Unit's only campground. \n\nHalf the sites are by reservation at recreation.gov while all remaining sites are first come, first served. Most sites are suitable for tents and RVs (no hookups). \n\nCottonwood Campground fills to capacity each afternoon, mid-May through mid-September.",
+            "reservationssitesreservable": "",
+            "parkCode": "thro",
+            "amenities": {
+                "trashrecyclingcollection": "Yes - seasonal",
+                "toilets": [
+                    "Vault Toilets - seasonal",
+                    "Vault Toilets - year round"
+                ],
+                "internetconnectivity": "No",
+                "showers": [
+                    "None"
+                ],
+                "cellphonereception": "No",
+                "laundry": "No",
+                "amphitheater": "",
+                "dumpstation": "No",
+                "campstore": "No",
+                "stafforvolunteerhostonsite": "No",
+                "potablewater": [
+                    "Yes - seasonal"
+                ],
+                "iceavailableforsale": "No",
+                "firewoodforsale": "No",
+                "ampitheater": "No",
+                "foodstoragelockers": "No"
+            },
+            "id": "2432",
+            "reservationsdescription": ""
+        },
+        {
+            "regulationsurl": "https:\/\/www.nps.gov\/thro\/planyourvisit\/camping-regulations.htm",
+            "weatheroverview": "Summers are warm (highs 80 - 100 degrees) with occasional thunderstorms and lots of wind. \nWinter is very cold with night time temperatures dropping well below zero.",
+            "campsites": {
+                "other": "0",
+                "group": "1",
+                "horse": "0",
+                "totalsites": "51",
+                "tentonly": "0",
+                "electricalhookups": "0",
+                "rvonly": "0",
+                "walkboatto": "9"
+            },
+            "accessibility": {
+                "wheelchairaccess": "",
+                "internetinfo": "",
+                "rvallowed": "0",
+                "cellphoneinfo": "Depending on your cellular provider, you may have moderate, limited, or no cell signal.",
+                "firestovepolicy": "Fires are permitted in charcoal grates or fully contained fire pans only.  Campfires and use of camp stoves may be restricted in times of high fire danger.",
+                "rvmaxlength": "0",
+                "additionalinfo": "Each camp site has a picnic table, raised grill for campfires and for cooking with wood or charcoal, and a cleared, flat area for a tent.",
+                "trailermaxlength": "0",
+                "adainfo": "",
+                "rvinfo": "",
+                "accessroads": [],
+                "trailerallowed": "0",
+                "classifications": []
+            },
+            "directionsoverview": "Enter the North Unit from Highway 85. Travel 5.5 miles on the scenic drive. Juniper Campground is on the left. Stop at the campground’s self-registration kiosk for information on how to claim a campsite.",
+            "reservationsurl": "",
+            "directionsUrl": "",
+            "reservationssitesfirstcome": "",
+            "name": "Juniper Campground",
+            "regulationsoverview": "Check out time is noon. Check in any time.",
+            "latLong": "{lat:47.59500000, lng:-103.34000000}",
+            "description": "Juniper Campground is 5 miles from Hwy 85 and is the only campground in the park's North Unit. All sites are open to tent camping and most can also be used by vehicles\/RVs (no hookups). \n\nAll regular sites are first come, first served. Juniper Campground fills to capacity on holiday weekends only, if at all. \n\nThe group site is by reservation only at recreation.gov. See the RESERVATIONS section below.",
+            "reservationssitesreservable": "",
+            "parkCode": "thro",
+            "amenities": {
+                "trashrecyclingcollection": "Yes - seasonal",
+                "toilets": [
+                    "Vault Toilets - seasonal",
+                    "Vault Toilets - year round"
+                ],
+                "internetconnectivity": "No",
+                "showers": [
+                    "None"
+                ],
+                "cellphonereception": "No",
+                "laundry": "No",
+                "amphitheater": "",
+                "dumpstation": "No",
+                "campstore": "No",
+                "stafforvolunteerhostonsite": "No",
+                "potablewater": [
+                    "Yes - seasonal"
+                ],
+                "iceavailableforsale": "No",
+                "firewoodforsale": "No",
+                "ampitheater": "No",
+                "foodstoragelockers": "No"
+            },
+            "id": "6628",
+            "reservationsdescription": ""
+        },
+        {
+            "regulationsurl": "https:\/\/www.nps.gov\/thro\/planyourvisit\/camping-regulations.htm",
+            "weatheroverview": "Summers are warm (highs 80 - 100 degrees) with occasional thunderstorms and lots of wind. \nNight time lows in the summer are in the 50s to 60s but begin dropping below zero by late September or early October.",
+            "campsites": {
+                "other": "0",
+                "group": "1",
+                "horse": "1",
+                "totalsites": "1",
+                "tentonly": "0",
+                "electricalhookups": "0",
+                "rvonly": "0",
+                "walkboatto": "0"
+            },
+            "accessibility": {
+                "wheelchairaccess": "",
+                "internetinfo": "",
+                "rvallowed": "0",
+                "cellphoneinfo": "",
+                "firestovepolicy": "All fires must be contained in the provided grills or in a fully contained fire pan. Campfires and use of camp stoves may be restricted during times of high fire danger. Save our trees! Never transport firewood to the park from outside North Dakota. You could introduce harmful pests to the park.",
+                "rvmaxlength": "0",
+                "additionalinfo": "Ample parking provides room for several horse trailers and\/or RVs (no electric hook-ups). Tenting pads, raised grills for cooking with wood or charcoal, and a covered picnic pavilion are also provided. ",
+                "trailermaxlength": "0",
+                "adainfo": "",
+                "rvinfo": "",
+                "accessroads": [],
+                "trailerallowed": "0",
+                "classifications": []
+            },
+            "directionsoverview": "Enter the South Unit in Medora. Roundup is about 12 miles north on East River Road. The last 1.5 miles of the route is gravel. Follow signs to the camp. The campground is gated. The lock combination is given to registered campers when they arrive at the park entrance.",
+            "reservationsurl": "",
+            "directionsUrl": "",
+            "reservationssitesfirstcome": "",
+            "name": "Roundup Group Horse Camp",
+            "regulationsoverview": "Only certified weed-free forage is allowed in the park. \n\nHorseback riding is permitted on all backcountry trails as well as cross country (off-trail travel). For safety reasons, horses are not permitted on nature trails (trails under 1 mile), or in general-use campgrounds and picnic areas. \n\nHorseback riders must abide by regulations regarding horse use. \n\nCheck in \/ check out time is noon.",
+            "latLong": "{lat:47.0069444, lng:-103.5055556}",
+            "description": "Roundup is the park's only camping facility in which horses are permitted. This private campsite is located 12 miles from Medora, ND in the park's South Unit. It is reserved by one group at a time; space is not be shared among different parties. \n\nReservations for Roundup begin each season on the first business day in March at 8:00 am MST. See the RESERVATIONS section below. \n\nRoundup can accommodate up to 20 people and 20 horses or 30 people if camping without horses.",
+            "reservationssitesreservable": "",
+            "parkCode": "thro",
+            "amenities": {
+                "trashrecyclingcollection": "Yes - seasonal",
+                "toilets": [
+                    "Vault Toilets - seasonal",
+                    "Vault Toilets - year round"
+                ],
+                "internetconnectivity": "No",
+                "showers": [
+                    "None"
+                ],
+                "cellphonereception": "No",
+                "laundry": "No",
+                "amphitheater": "",
+                "dumpstation": "No",
+                "campstore": "No",
+                "stafforvolunteerhostonsite": "No",
+                "potablewater": [
+                    "Yes - seasonal"
+                ],
+                "iceavailableforsale": "No",
+                "firewoodforsale": "No",
+                "ampitheater": "No",
+                "foodstoragelockers": "No"
+            },
+            "id": "6629",
+            "reservationsdescription": ""
+        }
+    ],
+    "limit": "50",
+    "start": "1"
+}

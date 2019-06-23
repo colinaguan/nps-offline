@@ -1,0 +1,97 @@
+{
+    "total": "5",
+    "data": [
+        {
+            "commoncore": {
+                "statestandards": "RI.4.1; RI.4.4; RI.4.7; RI.4.9; RI.4.10; W.4.1b; W.4.4; W.4.7; W.4.8; W.4.9; W.4.10; L.4.1; L.4.2; L.4.3; L.4.4; L.4.5; L.4.6",
+                "mathstandards": [],
+                "additionalstandards": "",
+                "elastandards": []
+            },
+            "gradelevel": "Upper Elementary: Third Grade through Fifth Grade",
+            "questionobjective": "Utilizing the strategy of compare and contrast, students will obtain the skills necessary to identify the differences between observation and inference. They will use these skills to analyze two figures in North Dakota history: Theodore Roosevelt and the Marquis de Mores.",
+            "subject": "Literacy and Language Arts,Social Studies",
+            "title": "A Tale of Two Men",
+            "id": "6122317",
+            "duration": "90 Minutes",
+            "url": "https:\/\/www.nps.gov\/teachers\/classrooms\/a-tale-of-two-men.htm",
+            "parks": [
+                "thro"
+            ]
+        },
+        {
+            "commoncore": {
+                "statestandards": "National Curriculum Standards: 4-LS1; 5-LS2; MS-LS1; MS-LS2; ELA standards grades 4-5",
+                "mathstandards": [],
+                "additionalstandards": "",
+                "elastandards": []
+            },
+            "gradelevel": "Upper Elementary: Third Grade through Fifth Grade",
+            "questionobjective": "Students will be able to name at least one plant or animal found in Theodore Roosevelt National Park. Students will also explain how their organism survives in the ecosystem(s) of the park, and identify ways other organisms are linked to their own.",
+            "subject": "Science,Social Studies",
+            "title": "Biological Biography",
+            "id": "6122366",
+            "duration": "60 Minutes",
+            "url": "https:\/\/www.nps.gov\/teachers\/classrooms\/biological-biography.htm",
+            "parks": [
+                "thro"
+            ]
+        },
+        {
+            "commoncore": {
+                "statestandards": "ELA Standards: W.4-8.2; W.4-8.4; W.4-8.6; W.4-8.8-9; SL.4-5.2-3; L.4-8.1-6; SL.6-7.2",
+                "mathstandards": [],
+                "additionalstandards": "",
+                "elastandards": []
+            },
+            "gradelevel": "Middle School: Sixth Grade through Eighth Grade",
+            "questionobjective": "After completing this activity, students will be able to explain when and why Theodore Roosevelt spent time in the Dakota Territory, as well as how that time influenced our future president. Students will be able to define terms such as \"conservation\" and \"legacy,\" and use those terms in the context of Theodore Roosevelt's life and experiences.",
+            "subject": "Social Studies",
+            "title": "Finding Roosevelt Video Assessment",
+            "id": "6122361",
+            "duration": "60 Minutes",
+            "url": "https:\/\/www.nps.gov\/teachers\/classrooms\/finding-roosevelt-video-assessment.htm",
+            "parks": [
+                "thro"
+            ]
+        },
+        {
+            "commoncore": {
+                "statestandards": "ND State Curriculum Standards: SS.4.2.5; SS.5.2.4;\n4-LS1-1; PE.5.3.2; PE.4-5.5.4; SS.8.2.5; SS.8.2.11; MS-LS2-4",
+                "mathstandards": [],
+                "additionalstandards": "",
+                "elastandards": []
+            },
+            "gradelevel": "Middle School: Sixth Grade through Eighth Grade",
+            "questionobjective": "Students will be able to identify an interest of Theodore Roosevelt as a young boy. They will also be able to explain how his boyhood interests influenced his later attitudes towards conservation.",
+            "subject": "Literacy and Language Arts,Science,Social Studies",
+            "title": "The Young Naturalist",
+            "id": "6122354",
+            "duration": "90 Minutes",
+            "url": "https:\/\/www.nps.gov\/teachers\/classrooms\/the-young-naturalist.htm",
+            "parks": [
+                "thro"
+            ]
+        },
+        {
+            "commoncore": {
+                "statestandards": "National Curriculum Standards: 4-LS1; 5-LS1; 5-LS2; MS-LS2",
+                "mathstandards": [],
+                "additionalstandards": "",
+                "elastandards": []
+            },
+            "gradelevel": "Upper Elementary: Third Grade through Fifth Grade",
+            "questionobjective": "Students will be able to explain how energy is transferred between organisms. They will also create a model showing this energy transfer, and explain the importance of diversity in an ecosystem.",
+            "subject": "Science",
+            "title": "Web of Life",
+            "id": "6122318",
+            "duration": "60 Minutes",
+            "url": "https:\/\/www.nps.gov\/teachers\/classrooms\/web-of-life.htm",
+            "parks": [
+                "thro"
+            ]
+        }
+    ],
+    "limit": "50",
+    "start": "1"
+}

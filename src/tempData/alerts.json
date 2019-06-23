@@ -1,0 +1,15 @@
+{
+    "total": "1",
+    "data": [
+        {
+            "title": "South Unit Road Closure",
+            "id": "8688DD7F-C336-E8BE-32655ABCC8DD3C87",
+            "description": "Due to the continued deterioration, the Scenic Loop road between mile marker 7 and 11 is closed to vehicle traffic until further notice. This area is open to hiking and biking, however, the landslide cannot be crossed.",
+            "category": "Park Closure",
+            "url": "",
+            "parkCode": "thro"
+        }
+    ],
+    "limit": "50",
+    "start": "1"
+}
