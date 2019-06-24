@@ -26,6 +26,10 @@ function eventHtml(e) {
     return { __html: e.description };
 }
 
+function isEmptyObj(obj) {
+    return Object.entries(obj).length === 0 && obj.constructor === Object;
+}
+
 class Info extends Component {
 
     constructor(props) {
@@ -33,25 +37,25 @@ class Info extends Component {
 
         this.state = {
             parkInfo: {},
-            // alerts: {},
-            // articles: {},
-            // campgrounds: {},
-            // events: {},
-            // lessonplans: {},
-            // newsreleases: {},
-            // people: {},
-            // places: {},
-            // visitorcenters: {},
+            alerts: {},
+            articles: {},
+            campgrounds: {},
+            events: {},
+            lessonplans: {},
+            newsreleases: {},
+            people: {},
+            places: {},
+            visitorcenters: {},
 
-            alerts: alertData,
-            articles: articleData,
-            campgrounds: campgroundData,
-            events: eventsData,
-            lessonplans: lessonData,
-            newsreleases: newsData,
-            people: pplData,
-            places: placesData,
-            visitorcenters: vcenterData,
+            // alerts: alertData,
+            // articles: articleData,
+            // campgrounds: campgroundData,
+            // events: eventsData,
+            // lessonplans: lessonData,
+            // newsreleases: newsData,
+            // people: pplData,
+            // places: placesData,
+            // visitorcenters: vcenterData,
         }
 
         //parkInfo.images[0].url
@@ -60,50 +64,50 @@ class Info extends Component {
             return element.parkCode === props.id;
         });
 
-        // fetch(API + 'alerts?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ alerts: data }))
-        //     .catch(console.log);
+        fetch(API + 'alerts?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ alerts: data }))
+            .catch(console.log);
 
-        // fetch(API + 'articles?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ articles: data }))
-        //     .catch(console.log);
+        fetch(API + 'articles?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ articles: data }))
+            .catch(console.log);
 
-        // fetch(API + 'campgrounds?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ campgrounds: data }))
-        //     .catch(console.log);
+        fetch(API + 'campgrounds?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ campgrounds: data }))
+            .catch(console.log);
 
-        // fetch(API + 'events?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ events: data }))
-        //     .catch(console.log);
+        fetch(API + 'events?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ events: data }))
+            .catch(console.log);
 
-        // fetch(API + 'lessonplans?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ lessonplans: data }))
-        //     .catch(console.log);
+        fetch(API + 'lessonplans?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ lessonplans: data }))
+            .catch(console.log);
 
-        // fetch(API + 'newsreleases?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ newsreleases: data }))
-        //     .catch(console.log);
+        fetch(API + 'newsreleases?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ newsreleases: data }))
+            .catch(console.log);
 
-        // fetch(API + 'people?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ people: data }))
-        //     .catch(console.log);
+        fetch(API + 'people?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ people: data }))
+            .catch(console.log);
 
-        // fetch(API + 'places?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ places: data }))
-        //     .catch(console.log);
+        fetch(API + 'places?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ places: data }))
+            .catch(console.log);
 
-        // fetch(API + 'visitorcenters?parkCode=' + this.props.id + '&api_key=' + KEY)
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ visitorcenters: data }))
-        //     .catch(console.log);
+        fetch(API + 'visitorcenters?parkCode=' + this.props.id + '&api_key=' + KEY)
+            .then(response => response.json())
+            .then(data => this.setState({ visitorcenters: data }))
+            .catch(console.log);
     }
 
     render() {
@@ -128,6 +132,14 @@ class Info extends Component {
         // console.log("Visitor Centers");
         // console.log(this.state.visitorcenters);
 
+        var states = [this.state.alerts, this.state.articles, this.state.campgrounds, this.state.events, this.state.lessonplans,
+        this.state.newsreleases, this.state.people, this.state.places, this.state.visitorcenters];
+        var apiLoaded = states.every((st) => {
+            return !isEmptyObj(st);
+        });
+
+        let stateStr = this.state.parkInfo.states.split(",").join(" ");
+
         // carousel html
         let carousel = this.state.parkInfo.images.map((img, i) => {
             if (i === 0)
@@ -147,8 +159,6 @@ class Info extends Component {
             else
                 return (<li data-target="#carouselExampleIndicators" data-slide-to={i}></li>);
         });
-
-        let stateStr = this.state.parkInfo.states.split(",").join(" ");
 
         // content in alert modal html
         let alertModalDisp;
@@ -314,7 +324,52 @@ class Info extends Component {
             ));
         }
 
-        return (
+        if (!apiLoaded) {
+            return (
+                <div className="container">
+                    {/* carousel with pictures */}
+                    <div className="row">
+                        <div className="card carousel-card">
+                            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                                <div>
+                                    <div className="park-header">
+                                        <h3 className="park-title">{this.state.parkInfo.fullName}</h3>
+                                        <p className="park-desig-state">
+                                            {this.state.parkInfo.designation + " "}
+                                            <small>{stateStr}</small>
+                                        </p>
+                                    </div>
+                                    <div className="gradient">
+                                    </div>
+                                </div>
+                                <ol className="carousel-indicators">
+                                    {carIndi}
+                                </ol>
+                                <div className="carousel-inner">
+                                    {carousel}
+                                </div>
+                                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="sr-only">Previous</span>
+                                </a>
+                                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span className="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="container loading-container d-flex justify-content-center align-items-center">
+                        <div className="spinner-border" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        var content = (
             <div className="container">
 
                 {/* carousel with pictures */}
@@ -581,6 +636,8 @@ class Info extends Component {
 
             </div>
         );
+
+        return (content);
     }
 }
 

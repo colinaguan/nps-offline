@@ -33,6 +33,10 @@ p {
     padding-left: 2rem;
 }
 
+.loading-container {
+    height: 500px;
+}
+
 .modal-body {
     padding: 1.5rem;
 }
@@ -133,6 +137,7 @@ p {
     overflow-y: hidden;
     display: -webkit-box;
     display: -moz-box;
+    margin-bottom: -13px;
 }
 
 .overflow-hidden {

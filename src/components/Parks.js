@@ -3,218 +3,121 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import DesFilter from './DesFilter.js'
 import StateFilter from './StateFilter.js'
-import Filter from './Filter.js'
 
 import '../stylesheets/parks.css'
 
-function loadDesig(parksO) {
-
-    // creates javascript object
-    // keys: designation names
-    // values: array of integers (indices)
-    var desig = {};
-    var parks = parksO.data;
-
-    for (var i = 0; i < parks.length; i++) {
-        var key = parks[i].designation;
-        var vInd;
-        // if designation exists and is not stored yet, store and add index to dInd
-        if (!(key === "") && !(key in desig)) {
-            vInd = [];
-            vInd.push(i);
-            desig[key] = [];
-            desig[key] = vInd;
-        }
-        // if designation was already stored, push to dInd
-        else if (key in desig) {
-            vInd = desig[key];
-            vInd.push(i);
-            desig[key] = vInd;
-        }
-    }
-
-    return desig;
+function loadDesigs(parks) {
+    var desList = new Set();
+    parks.forEach((p) => {
+        desList.add(p.designation);
+    });
+    return Array.from(desList);
 }
 
-function loadStates(parksO) {
-
-    // creates javascript object
-    // keys: state initials
-    // values: array of integers(indicies)
-    var states = {};
-    var parks = parksO.data;
-
-    for (var i = 0; i < parks.length; i++) {
-        var value = parks[i].states;
-        var s = value.split(",");
-
-        for (var j = 0; j < s.length; j++) {
-            var vInd;
-            // if designation exists and is not stored yet, store and add index to dInd
-            if (!(s[j] === "") && !(s[j] in states)) {
-                vInd = [];
-                vInd.push(i);
-                states[s[j]] = [];
-                states[s[j]] = vInd;
-            }
-            // if designation was already stored, push to dInd
-            else if (s[j] in states) {
-                vInd = states[s[j]];
-                vInd.push(i);
-                states[s[j]] = vInd;
-            }
-        }
-    }
-
-    return states;
+function loadStates(parks) {
+    var states = new Set();
+    parks.forEach((p) => {
+        var stateList = p.states.split(",");
+        stateList.forEach((s) => {
+            states.add(s);
+        });
+    });
+    return Array.from(states);
 }
 
 class Parks extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            desig: {},          // designations
-            states: {},         // states
-            parksDisp: {},      // parks to display
-            // dFilt: "",
-            // sFilt: "",
-            input: ""
+            desigs: [],
+            states: [],
+            desigCheck: [],
+            statesCheck: [],
+            searchCheck: ""
         };
         // NOTE TO SELF: multiple filters??? checkbox list
 
-        //this.onFilterChange = this.onFilterChange.bind(this);
-        this.onSearchChange = this.onSearchChange.bind(this);
         this.onDesigChange = this.onDesigChange.bind(this);
         this.onStatesChange = this.onStatesChange.bind(this);
+        this.onSearchChange = this.onSearchChange.bind(this);
 
-        this.state.desig = loadDesig(this.props.parks);
-        this.state.states = loadStates(this.props.parks);
-        this.state.parksDisp = this.props.parks;
+        this.state.desigs = loadDesigs(this.props.parks.data);
+        this.state.states = loadStates(this.props.parks.data);
     }
 
-    // onFilterChange(event) {
+    onDesigChange(desigFilters) {
+        console.log("Designation Change");
 
-    //     var p = [];
-    //     var parks = this.props.parks.data;
+        this.setState({
+            desigCheck: desigFilters
+        });
+    }
 
-    //     // check if changed filter is DesigFilter
-    //     if (event in this.state.desig) {
-    //         var des = this.state.desig[event];
+    onStatesChange(stateFilters) {
+        console.log("States Change");
+        console.log(stateFilters);
 
-    //         if (event === "None") {
-    //             p = this.props.parks.data;
-    //         } else {
-    //             for (var i = 0; i < des.length; i++) {
-    //                 var j = des[i];
-    //                 p[i] = parks[j];
-    //             }
-    //         }
-    //     }
+        this.setState({
+            statesCheck: stateFilters
+        });
+    }
 
-    //     this.setState({
-    //         parksDisp: { data: p }
-    //     });
-    // }
-
-    onSearchChange(event) {
+    onSearchChange(searchFil) {
         console.log("Input changed");
-        console.log(event.target.value);
-
-        var p = [];
-        var parks = this.props.parks.data;
-        var inp = event.target.value;
-
-        if (inp === "") {
-            p = this.props.parks.data;
-        } else {
-            var j = 0;
-            for (var i = 0; i < parks.length; i++) {
-                if ((parks[i].fullName.toLowerCase()).includes(inp.toLowerCase())) {
-                    p[j] = parks[i];
-                    j++;
-                }
-            }
-        }
+        console.log(searchFil.target.value);
 
         this.setState({
-            parksDisp: { data: p }
-        })
-    }
-
-    onDesigChange(d) {
-        console.log("Clicked " + d);
-
-        this.setState({
-            dFilt: d
-        });
-
-        var p = [];
-        var parks = this.props.parks.data;
-        var des = this.state.desig[d];
-
-        if (d === "None") {
-            p = this.props.parks.data;
-        } else {
-            for (var i = 0; i < des.length; i++) {
-                var j = des[i];
-                p[i] = parks[j];
-            }
-        }
-
-        this.setState({
-            parksDisp: { data: p }
-        })
-    }
-
-    onStatesChange(s) {
-        console.log("Clicked " + s);
-
-        this.setState({
-            sFilt: s
-        });
-
-        var p = [];
-        var parks = this.props.parks.data;
-        var sta = this.state.states[s];
-
-        if (s === "None") {
-            p = this.props.parks.data;
-        } else {
-            for (var i = 0; i < sta.length; i++) {
-                var j = sta[i];
-                p[i] = parks[j];
-            }
-        }
-
-        this.setState({
-            parksDisp: { data: p }
+            searchCheck: searchFil.target.value
         });
     }
 
     render() {
         let content;
-        var parkInfo = this.state.parksDisp;
+
+        var parkInfo = this.props.parks.data;
+        console.log(parkInfo);
+        if (this.state.desigCheck.length !== 0) {
+            parkInfo = parkInfo.filter((park) => {
+                return this.state.desigCheck.includes(park.designation);
+            })
+        }
+        console.log(parkInfo);
+        console.log("StatesCheck: ")
+        console.log(this.state.statesCheck);
+        if (this.state.statesCheck.length !== 0) {
+            parkInfo = parkInfo.filter((park) => {
+                var s = park.states.split(",").every((state) => {
+                    return this.state.statesCheck.includes(state);
+                });
+                return s;
+            });
+        }
+        console.log(parkInfo);
+        console.log("Search Check: " + this.state.searchCheck);
+        if (this.state.searchCheck) {
+            parkInfo = parkInfo.filter((park) => {
+                return park.fullName.toLowerCase().includes(this.state.searchCheck.toLowerCase());
+            })
+        }
 
         console.log(parkInfo);
 
-        //<img class="card-img-top" src={parkInfo.images.url} alt="Card image cap"></img>
-
-        if (parkInfo)
-            content = parkInfo.data.map((parkInfo) => {
-                var stateStr = parkInfo.states.split(",").join(" ");
+        if (parkInfo) {
+            content = parkInfo.map((park) => {
+                var stateStr = park.states.split(",").join(" ");
                 return (
                     <div className="col-lg-4 col-md-6">
-                        <div className="card park-card" key={parkInfo.fullName}>
-                            <img className="card-img-top" src={parkInfo.images[0].url} alt="Card image cap"></img>
+                        <div className="card park-card" key={park.fullName}>
+                            <img className="card-img-top" src={park.images[0].url} alt="Card image cap"></img>
                             <div className="card-block d-flex">
                                 <div className="card-body">
-                                    <h5 className="card-title">{parkInfo.fullName}</h5>
+                                    <h5 className="card-title">{park.fullName}</h5>
                                     <p className="card-text text-muted">
-                                        {parkInfo.designation + " "}
+                                        {park.designation + " "}
                                         <small style={{ "opacity": 0.5 }}>{stateStr}</small>
                                     </p>
-                                    <Link to={"/parks/" + parkInfo.parkCode} >
-                                        <button type="button learn-more" className="btn btn-success">Learn More</button>
+                                    <Link to={"/parks/" + park.parkCode} >
+                                        <button type="button learn-more" className="btn btn-success btn-learn-more">Learn More</button>
                                     </Link>
                                 </div>
                             </div>
@@ -222,6 +125,7 @@ class Parks extends Component {
                     </div>
                 );
             });
+        }
         else
             content = <div></div>;
 
@@ -233,8 +137,7 @@ class Parks extends Component {
                         <input onChange={this.onSearchChange} type="text" className="search-bar" placeholder="Search..."></input>
                     </div>
                     <div className="row filter-row">
-                        {/* <Filter filter onDesigChange={this.onDesigChange} desig={this.state.desig} /> */}
-                        <DesFilter desFilter onDesigChange={this.onDesigChange} desig={this.state.desig} />
+                        <DesFilter desFilter onDesigChange={this.onDesigChange} desigs={this.state.desigs} />
                         <StateFilter stateFilter onStatesChange={this.onStatesChange} states={this.state.states} />
                     </div>
                 </div>
