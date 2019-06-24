@@ -36,26 +36,26 @@ class Info extends Component {
         super(props);
 
         this.state = {
-            parkInfo: {},
-            alerts: {},
-            articles: {},
-            campgrounds: {},
-            events: {},
-            lessonplans: {},
-            newsreleases: {},
-            people: {},
-            places: {},
-            visitorcenters: {},
+            // parkInfo: {},
+            // alerts: {},
+            // articles: {},
+            // campgrounds: {},
+            // events: {},
+            // lessonplans: {},
+            // newsreleases: {},
+            // people: {},
+            // places: {},
+            // visitorcenters: {},
 
-            // alerts: alertData,
-            // articles: articleData,
-            // campgrounds: campgroundData,
-            // events: eventsData,
-            // lessonplans: lessonData,
-            // newsreleases: newsData,
-            // people: pplData,
-            // places: placesData,
-            // visitorcenters: vcenterData,
+            alerts: alertData,
+            articles: articleData,
+            campgrounds: campgroundData,
+            events: eventsData,
+            lessonplans: lessonData,
+            newsreleases: newsData,
+            people: pplData,
+            places: placesData,
+            visitorcenters: vcenterData,
         }
 
         //parkInfo.images[0].url
@@ -64,63 +64,63 @@ class Info extends Component {
             return element.parkCode === props.id;
         });
 
-        fetch(API + 'alerts?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ alerts: data }))
-            .catch(console.log);
+        // fetch(API + 'alerts?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ alerts: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'articles?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ articles: data }))
-            .catch(console.log);
+        // fetch(API + 'articles?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ articles: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'campgrounds?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ campgrounds: data }))
-            .catch(console.log);
+        // fetch(API + 'campgrounds?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ campgrounds: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'events?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ events: data }))
-            .catch(console.log);
+        // fetch(API + 'events?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ events: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'lessonplans?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ lessonplans: data }))
-            .catch(console.log);
+        // fetch(API + 'lessonplans?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ lessonplans: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'newsreleases?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ newsreleases: data }))
-            .catch(console.log);
+        // fetch(API + 'newsreleases?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ newsreleases: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'people?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ people: data }))
-            .catch(console.log);
+        // fetch(API + 'people?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ people: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'places?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ places: data }))
-            .catch(console.log);
+        // fetch(API + 'places?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ places: data }))
+        //     .catch(console.log);
 
-        fetch(API + 'visitorcenters?parkCode=' + this.props.id + '&api_key=' + KEY)
-            .then(response => response.json())
-            .then(data => this.setState({ visitorcenters: data }))
-            .catch(console.log);
+        // fetch(API + 'visitorcenters?parkCode=' + this.props.id + '&api_key=' + KEY)
+        //     .then(response => response.json())
+        //     .then(data => this.setState({ visitorcenters: data }))
+        //     .catch(console.log);
     }
 
     render() {
-        console.log("Specific Park Info");
-        console.log(this.state.parkInfo);
+        // console.log("Specific Park Info");
+        // console.log(this.state.parkInfo);
         // console.log("Alerts");
         // console.log(this.state.alerts);
         // console.log("Articles");
         // console.log(this.state.articles);
         // console.log("Campgrounds");
         // console.log(this.state.campgrounds);
-        console.log("Events");
-        console.log(this.state.events);
+        // console.log("Events");
+        // console.log(this.state.events);
         // console.log("Lesson Plans");
         // console.log(this.state.lessonplans);
         // console.log("News Relesases");
@@ -143,11 +143,11 @@ class Info extends Component {
         // carousel html
         let carousel = this.state.parkInfo.images.map((img, i) => {
             if (i === 0)
-                return (<div className="carousel-item active">
+                return (<div className="carousel-item active" key={i}>
                     <img className="d-block w-100" src={img.url}></img>
                 </div>);
             else
-                return (<div className="carousel-item">
+                return (<div className="carousel-item" key={i}>
                     <img className="d-block w-100" src={img.url}></img>
                 </div>);
         });
@@ -155,16 +155,16 @@ class Info extends Component {
         // carousel indicators html
         let carIndi = this.state.parkInfo.images.map((_, i) => {
             if (i === 0)
-                return (<li data-target="#carouselExampleIndicators" data-slide-to={i} className="active"></li>);
+                return (<li data-target="#carouselExampleIndicators" data-slide-to={i} key={i} className="active"></li>);
             else
-                return (<li data-target="#carouselExampleIndicators" data-slide-to={i}></li>);
+                return (<li data-target="#carouselExampleIndicators" data-slide-to={i} key={i}></li>);
         });
 
         // content in alert modal html
         let alertModalDisp;
         if (this.state.alerts && this.state.alerts.total > 0) {
             alertModalDisp = this.state.alerts.data.map((a) => (
-                <div className="alerts-text">
+                <div className="alerts-text" key={a}>
                     <h6>{a.title}</h6>
                     <p>{a.description}</p>
                 </div>
@@ -181,7 +181,7 @@ class Info extends Component {
         let vcenterDisp;
         if (this.state.visitorcenters && this.state.visitorcenters.total > 0) {
             vcenterDisp = this.state.visitorcenters.data.map((center) => (
-                <div className="visitor-center">
+                <div className="visitor-center" key={center}>
                     <h5>{center.name}</h5>
                     <p>{center.description}</p>
                     {center.directionsInfo !== "" &&
@@ -199,7 +199,7 @@ class Info extends Component {
         let campgroundDisp;
         if (this.state.campgrounds && this.state.campgrounds.total > 0) {
             campgroundDisp = this.state.campgrounds.data.map((camp) => (
-                <div className="campground">
+                <div className="campground" key={camp}>
                     <h5>{camp.name}</h5>
                     <p>{camp.description}</p>
                     {camp.directionsoverview !== "" &&
@@ -225,7 +225,7 @@ class Info extends Component {
         let placeDisp;
         if (this.state.places && this.state.places.total > 0) {
             placeDisp = this.state.places.data.map((place) => (
-                <div className="places">
+                <div className="places" key={place}>
                     <h5>{place.title}</h5>
                     <p>{place.listingdescription}</p>
                     <p className="a-link"><a href={place.url}>More information...</a></p>
@@ -236,7 +236,7 @@ class Info extends Component {
         let pplDisp;
         if (this.state.people && this.state.people.total > 0) {
             pplDisp = this.state.people.data.map((ppl) => (
-                <div className="people">
+                <div className="people" key={ppl}>
                     <h5>{ppl.title}</h5>
                     <p>{ppl.listingdescription}</p>
                     <p className="a-link"><a href={ppl.url}>More information...</a></p>
@@ -248,12 +248,12 @@ class Info extends Component {
         let physAddy = this.state.parkInfo.addresses.map((add) => {
             if (add.type === "Physical") {
                 return (
-                    <p className="p-right-info">
+                    <div className="p-right-info" key={add}>
                         {add.line1}<br />
                         {add.line2.length !== 0 && <div>{add.line2} < br /></div>}
                         {add.line3.length !== 0 && <div>{add.line3} < br /></div>}
                         {add.city + ", " + add.stateCode + " " + add.postalCode}
-                    </p>
+                    </div>
                 );
             }
         });
@@ -264,7 +264,7 @@ class Info extends Component {
             if (num.type === "Voice") {
                 let numStr = num.phoneNumber;
                 return (
-                    <div className="contact-info-text">
+                    <div className="contact-info-text" key={num}>
                         {isNaN(numStr) &&
                             <div className="phone-number">
                                 <p className="p-right-info">{numStr}</p>
@@ -283,7 +283,7 @@ class Info extends Component {
         let articleDisp;
         if (this.state.articles && this.state.articles.total > 0) {
             articleDisp = this.state.articles.data.map((art) => (
-                <div className="article">
+                <div className="article" key={art}>
                     <h6>{art.title}</h6>
                     <p>{art.listingdescription}</p>
                     <p className="a-link"><a href={art.url}>View full article...</a></p>
@@ -294,7 +294,7 @@ class Info extends Component {
         let eventsDisp;
         if (this.state.events && this.state.events.total > 0) {
             eventsDisp = this.state.events.data.map((e) => (
-                <div className="event">
+                <div className="event" key={e}>
                     <h6>{e.title}</h6>
                     {e.description.includes("<") && <div dangerouslySetInnerHTML={eventHtml(e)}></div>}
                     {!e.description.includes("<") && <p>{e.description}</p>}
@@ -305,7 +305,7 @@ class Info extends Component {
         let newsDisp;
         if (this.state.newsreleases && this.state.newsreleases.total > 0) {
             newsDisp = this.state.newsreleases.data.map((news) => (
-                <div className="news-release">
+                <div className="news-release" key={news}>
                     <h6>{news.title}</h6>
                     <p>{news.abstract}</p>
                     <p className="a-link"><a href={news.url}>View full news release...</a></p>
@@ -316,7 +316,7 @@ class Info extends Component {
         let lessonDisp;
         if (this.state.lessonplans && this.state.lessonplans.total > 0) {
             lessonDisp = this.state.lessonplans.data.map((lesson) => (
-                <div className="lesson">
+                <div className="lesson" key={lesson}>
                     <h6>{lesson.title}</h6>
                     <p>{lesson.questionobjective}</p>
                     <p className="a-link"><a href={lesson.url}>View full lesson plan...</a></p>
@@ -410,19 +410,19 @@ class Info extends Component {
                     {this.state.alerts.total > 0 &&
                         <div className="alert alert-danger row-alert" role="alert" data-toggle="modal" data-target="#exampleModal">
                             <div className="alert-message d-flex align-items-center">
-                                <span class="badge badge-light">{this.state.alerts.total}</span>
+                                <span className="badge badge-light">{this.state.alerts.total}</span>
                                 <div className="alert-text">
                                     View Alerts in Effect
                                 </div>
                             </div>
 
                             {/* Alert Modal */}
-                            <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria- labelledby="exampleModalLabel" aria-hidden="true" >
+                            <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog">
                                 <div className="modal-dialog" role="document">
                                     <div className="modal-content">
                                         <div className="modal-header">
                                             <h5 className="modal-title alert-modal-title" id="exampleModalLabel">Alerts in Effect</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -567,7 +567,7 @@ class Info extends Component {
                                     <div className="modal-content">
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="articleModalTitle">Articles</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -584,7 +584,7 @@ class Info extends Component {
                                     <div className="modal-content">
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="eventsModalTitle">Events</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -601,7 +601,7 @@ class Info extends Component {
                                     <div className="modal-content">
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="newsModalTitle">News Releases</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -618,7 +618,7 @@ class Info extends Component {
                                     <div className="modal-content">
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="lessonModalTitle">Lesson Plans</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>

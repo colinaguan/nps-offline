@@ -23,16 +23,16 @@ class App extends Component {
     this.handleParkInfo = this.handleParkInfo.bind(this);
 
     this.state = {
-      parks: null,
-      //parks: data,       //grabbing from data.json (NOT FOR API)
+      //parks: null,
+      parks: data,       //grabbing from data.json (NOT FOR API)
       events: null,
       page: "parks"
     };
 
-    fetch(API + 'parks?limit=5&fields=addresses,contacts,images,operatingHours&api_key=' + KEY)
-      .then(response => response.json())
-      .then(data => this.setState({ parks: data }))
-      .catch(console.log);
+    // fetch(API + 'parks?limit=5&fields=addresses,contacts,images,operatingHours&api_key=' + KEY)
+    //   .then(response => response.json())
+    //   .then(data => this.setState({ parks: data }))
+    //   .catch(console.log);
   }
 
   handleParkClick() {
